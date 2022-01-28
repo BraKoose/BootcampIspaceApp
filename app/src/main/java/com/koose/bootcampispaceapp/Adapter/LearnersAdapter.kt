@@ -1,29 +1,46 @@
 package com.koose.bootcampispaceapp.Adapter
 
+import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.koose.bootcampispaceapp.R
+import com.koose.bootcampispaceapp.data.learnersData
 
-class LearnersAdapter:
-    RecyclerView.Adapter<LearnersAdapter.LeanersViewHolder>() {
+class LearnersAdapter(
+    private val context: Context,
+    private val learnersList: ArrayList<learnersData>,
+):
+    RecyclerView.Adapter<LearnersAdapter.LearnersViewHolder>() {
 
 
 
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LeanersViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LearnersViewHolder {
+        val Rootview = LayoutInflater.from(parent.context)
+            .inflate(R.layout.card_view_design, parent, false)
 
+        return LearnersViewHolder(Rootview)
     }
 
-    override fun onBindViewHolder(holder: LeanersViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LearnersViewHolder, position: Int) {
+        val ItemsViewModel = learnersList[position]
+
+        // sets the image to the imageview from our itemHolder class
+//        holder.imageView.setImageResource(ItemsViewModel.image)
+
+        // sets the text to the textview from our itemHolder class
+//        holder.textView.text = ItemsViewModel.text
 
     }
 
     override fun getItemCount(): Int {
-        return
+        return learnersList.size
     }
 
-    class LeanersViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
+    class LearnersViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
 
     }
 
