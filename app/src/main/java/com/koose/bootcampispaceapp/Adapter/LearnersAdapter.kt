@@ -4,6 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.koose.bootcampispaceapp.R
 import com.koose.bootcampispaceapp.data.learnersData
@@ -26,18 +29,19 @@ class LearnersAdapter(
     }
 
     override fun onBindViewHolder(holder: LearnersViewHolder, position: Int) {
-        val ItemsViewModel = learnersList[position]
+        val dataPosition = learnersList[position]
 
-        // sets the image to the imageview from our itemHolder class
+        holder.first_name.text = dataPosition.FirstName
+        holder.learnerClick.setOnClickListener {
+            handleLearnerClick.onLearnerClick(position)
+        }
 
-     //   holder.textView.text = ItemsViewModel.text
-        //        holder.textView.text = ItemsViewModel.text
-
-
-       // holder.imageView.setImageResource(ItemsViewModel.image)
-
-        // sets the text to the textview from our itemHolder class
-//        holder.textView.text = ItemsViewModel.text
+        Glide
+            .with(context)
+            .load(dataPosition.profileImg)
+            .centerCrop()
+            .placeholder(R.drawable.ic_launcher_foreground)
+            .into(holder.imgUrl);
 
     }
 
@@ -45,7 +49,12 @@ class LearnersAdapter(
         return learnersList.size
     }
 
+
+
     class LearnersViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
+        val imgUrl: ImageView = itemView.findViewById(R.id.imageView)
+        val first_name: TextView = itemView.findViewById(R.id.textView)
+        val learnerClick: CardView = itemView.findViewById(R.id.relaytiveLayout)
 
     }
 

@@ -2,6 +2,7 @@ package com.koose.bootcampispaceapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.SyncStateContract
 import androidx.recyclerview.widget.RecyclerView
 import com.koose.bootcampispaceapp.data.learnersData
 
@@ -14,5 +15,7 @@ class MainActivity : AppCompatActivity() {
 
 
         recycler = findViewById(R.id.Recycler)
+
     }
+
 }
