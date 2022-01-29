@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BootcampIspaceApp">
         <activity
+            android:name=".learnerProfile.PM.PMHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".learnerProfile.learnerProfileActivity"
             android:exported="false" />
         <activity
