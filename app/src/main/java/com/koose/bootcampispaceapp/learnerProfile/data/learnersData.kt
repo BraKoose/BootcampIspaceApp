@@ -1,7 +1,8 @@
 package com.koose.bootcampispaceapp.learnerProfile.Adapter.data
 
 data class learnersData(
-    val name:String,
+    val Fname:String,
+    val LName: String,
     val email: String,
     val gender: String,
     val profession: String,
