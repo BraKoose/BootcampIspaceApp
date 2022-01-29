@@ -1,4 +1,4 @@
-package com.koose.bootcampispaceapp.Utils
+package com.koose.bootcampispaceapp.learnerProfile.Adapter.Utils
 
 import com.koose.bootcampispaceapp.R
 

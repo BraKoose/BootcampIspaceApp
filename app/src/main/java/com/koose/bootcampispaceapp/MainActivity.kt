@@ -1,14 +1,12 @@
 package com.koose.bootcampispaceapp
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.SyncStateContract
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.koose.bootcampispaceapp.Adapter.LearnersAdapter
-import com.koose.bootcampispaceapp.Utils.constants
-import com.koose.bootcampispaceapp.data.learnersData
+import com.koose.bootcampispaceapp.learnerProfile.Adapter.LearnersAdapter
+import com.koose.bootcampispaceapp.learnerProfile.Adapter.Utils.constants
+import com.koose.bootcampispaceapp.learnerProfile.Adapter.data.learnersData
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recycler: RecyclerView

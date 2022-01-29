@@ -1,4 +1,4 @@
-package com.koose.bootcampispaceapp.Adapter
+package com.koose.bootcampispaceapp.learnerProfile.Adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.koose.bootcampispaceapp.R
-import com.koose.bootcampispaceapp.data.learnersData
+import com.koose.bootcampispaceapp.learnerProfile.Adapter.data.learnersData
 
 class LearnersAdapter(
     private val context: Context,

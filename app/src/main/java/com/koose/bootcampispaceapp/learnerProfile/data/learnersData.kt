@@ -1,4 +1,4 @@
-package com.koose.bootcampispaceapp.data
+package com.koose.bootcampispaceapp.learnerProfile.Adapter.data
 
 data class learnersData(
     val name:String,
