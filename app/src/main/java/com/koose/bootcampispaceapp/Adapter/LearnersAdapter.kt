@@ -8,12 +8,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.koose.bootcampispaceapp.R
 import com.koose.bootcampispaceapp.data.learnersData
 
 class LearnersAdapter(
     private val context: Context,
     private val learnersList: ArrayList<learnersData>,
+    private val handleLearnerClick: HandleLearnerClick
 ):
     RecyclerView.Adapter<LearnersAdapter.LearnersViewHolder>() {
 
@@ -31,14 +33,14 @@ class LearnersAdapter(
     override fun onBindViewHolder(holder: LearnersViewHolder, position: Int) {
         val dataPosition = learnersList[position]
 
-        holder.first_name.text = dataPosition.FirstName
+        holder.first_name.text = dataPosition.firstName
         holder.learnerClick.setOnClickListener {
             handleLearnerClick.onLearnerClick(position)
         }
 
         Glide
             .with(context)
-            .load(dataPosition.profileImg)
+            .load(dataPosition.profileimage)
             .centerCrop()
             .placeholder(R.drawable.ic_launcher_foreground)
             .into(holder.imgUrl);
@@ -56,6 +58,10 @@ class LearnersAdapter(
         val first_name: TextView = itemView.findViewById(R.id.textView)
         val learnerClick: CardView = itemView.findViewById(R.id.relaytiveLayout)
 
+    }
+
+    interface HandleLearnerClick {
+        fun onLearnerClick(position: Int)
     }
 
 
