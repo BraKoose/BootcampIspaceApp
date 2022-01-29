@@ -5,7 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/learners_item_raw.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/learners_item_raw.xml" value="0.1" />
         <entry key="app/src/main/res/layout/learns_raw_data.xml" value="0.1796875" />
       </map>
     </option>

@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         learnersList.add(
             learnersData(
                 "Bra", "Koose", "kooseTheBlogger@gmail.com", "Male",
-                "Backend Developer", "0545644173",  constants.GODFRED
+                "Backend Developer", "0545644173",constants.GODFRED
             )
         )
 
