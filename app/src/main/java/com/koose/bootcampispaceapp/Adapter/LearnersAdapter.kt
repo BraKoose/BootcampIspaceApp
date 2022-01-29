@@ -14,7 +14,7 @@ import com.koose.bootcampispaceapp.data.learnersData
 
 class LearnersAdapter(
     private val context: Context,
-    private val learnersList: ArrayList<learnersData>,
+    private val learnersList: List<learnersData>,
     private val handleLearnerClick: HandleLearnerClick
 ):
     RecyclerView.Adapter<LearnersAdapter.LearnersViewHolder>() {
@@ -32,18 +32,19 @@ class LearnersAdapter(
 
     override fun onBindViewHolder(holder: LearnersViewHolder, position: Int) {
         val dataPosition = learnersList[position]
+        holder.name.text = dataPosition.name
 
-        holder.first_name.text = dataPosition.firstName
+
         holder.learnerClick.setOnClickListener {
             handleLearnerClick.onLearnerClick(position)
         }
 
         Glide
             .with(context)
-            .load(dataPosition.profileimage)
+            .load(dataPosition.profileImage)
             .centerCrop()
             .placeholder(R.drawable.ic_launcher_foreground)
-            .into(holder.imgUrl);
+            .into(holder.profileImage)
 
     }
 
@@ -54,9 +55,9 @@ class LearnersAdapter(
 
 
     class LearnersViewHolder(itemView:View): RecyclerView.ViewHolder(itemView) {
-        val imgUrl: ImageView = itemView.findViewById(R.id.imageView)
-        val first_name: TextView = itemView.findViewById(R.id.textView)
-        val learnerClick: CardView = itemView.findViewById(R.id.relaytiveLayout)
+        val name:TextView = itemView.findViewById(R.id.textView)
+        val profileImage:ImageView = itemView.findViewById(R.id.imageView)
+        val learnerClick : CardView = itemView.findViewById(R.id.relaytiveLayout)
 
     }
 

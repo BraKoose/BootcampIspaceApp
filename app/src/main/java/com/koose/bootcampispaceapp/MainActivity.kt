@@ -28,21 +28,21 @@ class MainActivity : AppCompatActivity() {
         learnersList.add(
             learnersData(
                 "Bra", "Koose", "kooseTheBlogger@gmail.com", "Male",
-                "Backend Developer", "0545644173", "Accra", constants.GODFRED
+                "Backend Developer", "0545644173",  constants.GODFRED
             )
         )
 
         learnersList.add(
             learnersData(
                 "Olorunfemi", "Oyewole", "eliasikechi14@gmail.com", "Male",
-                "Programmer/Graphic Designer", "0545565901", "Accra", constants.FEMI
+                "Programmer/Graphic Designer", "0545565901", constants.FEMI
             )
         )
 
         learnersList.add(
             learnersData(
                 "Hephzibah", "Emereole", "hephzibahemereole@gmail.com", "Female",
-                "Student", "0279542753", "Berekuso", constants.ZIBAH
+                "Student", "0279542753", constants.ZIBAH
             )
         )
 
@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
                 "Female",
                 "Student of the  University for development Studies(UDS)",
                 "0201112557",
-                "Tema",
                 constants.FATIMAH
             )
         )
@@ -63,12 +62,11 @@ class MainActivity : AppCompatActivity() {
             LearnersAdapter(this, learnersList, object : LearnersAdapter.HandleLearnerClick {
                 override fun onLearnerClick(position: Int) {
                     val allLearner = learnersList[position]
-                    val fName: String = allLearner.firstName
-                    val lName: String = allLearner.lastName
+                    val name:String = allLearner.name
                     val email: String = allLearner.email
                     val gender: String = allLearner.gender
                     val profession: String = allLearner.profession
-                    val learnerImag: Int = allLearner.profileimage
+                    val learnerImage: Int = allLearner.profileImage
                     val phoneNumb: String = allLearner.phone
 
 
